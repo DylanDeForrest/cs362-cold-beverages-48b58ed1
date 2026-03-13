@@ -19,6 +19,13 @@ describe 'A freezer' do
     expect(freezer.remaining_capacity).to eq(95)
   end
 
+  it 'remaining capacity decreases as items are added' do
+    freezer = Freezer.new
+    freezer.add(Item.new('Ice Cream', 10))
+    freezer.add(Item.new('Popsicle', 5))
+    expect(freezer.remaining_capacity).to eq(85)
+  end
+
   it 'can be turned on' do 
     freezer = Freezer.new
     expect{ freezer.turn_on }.not_to raise_error
