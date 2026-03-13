@@ -2,7 +2,7 @@ class WaterDispenser
 
   attr_reader :reservoir
 
-  def initialize(reservoir)
+  def initialize(reservoir = true)
     @reservoir = reservoir
   end
 
