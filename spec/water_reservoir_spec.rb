@@ -29,4 +29,16 @@ describe 'A water reservoir' do
     expect(reservoir.current_water_volume).to eq(7)
   end
 
+  it 'cannt be drained to zero' do 
+    reservoir = WaterReservoir.new(10, 2)
+    reservoir.drain(5)
+    expect(reservoir.current_water_volume).to eq(0)
+  end
+
+  it 'empty when drained' do 
+    reservoir = WaterReservoir.new(10, 2)
+    reservoir.drain(5)
+    expect(reservoir).to be_empty
+  end
+
 end
